@@ -5,7 +5,7 @@ class Aluno:
         self.matricula = matricula
 
     def printAluno(self):
-        print(self.codigo, self.nome, self.matricula)
+        print("\nAluno \nCódigo:", self.codigo, "\nNome:", self.nome, "\nMatrícula:", self.matricula)
 
 
 class AlunoEnsinoMedio(Aluno):
@@ -14,7 +14,7 @@ class AlunoEnsinoMedio(Aluno):
         self.ano = ano
 
     def printAlunoEnsinoMedio(self):
-        print(self.codigo, self.nome, self.matricula, self.ano)
+        print("\nAluno Ensino Médio \nCódigo:", self.codigo, "\nNome:",  self.nome, "\nMatrícula:",  self.matricula, "\nAno:", self.ano)
 
 
 class AlunoGraduacao(Aluno):
@@ -23,7 +23,7 @@ class AlunoGraduacao(Aluno):
         self.semestre = semestre
 
     def printAlunoGraduacao(self):
-        print(self.codigo, self.nome, self.matricula, self.semestre)
+        print("\nAluno Graduação \nCódigo:", self.codigo, "\nNome:",  self.nome, "\nMatrícula:",  self.matricula, "\nSemestre:", self.semestre)
 
 
 generico = Aluno("001", "Leonardo", "000001")
