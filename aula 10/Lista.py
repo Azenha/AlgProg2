@@ -49,6 +49,7 @@ class Lista:
                     if aux.dado == valor :
                         anterior.proximo = aux.proximo
                         self.tamanho -= 1
+                        #break #caso delete so o 1º
                     else: 
                         anterior = aux
                     aux = aux.proximo
