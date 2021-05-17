@@ -49,7 +49,8 @@ class Lista:
                     if aux.dado == valor :
                         anterior.proximo = aux.proximo
                         self.tamanho -= 1
-                    anterior = aux
+                    else: 
+                        anterior = aux
                     aux = aux.proximo
             if tamAnterior == self.tamanho:
                 print("Valor", valor ,"não encontrado.")
