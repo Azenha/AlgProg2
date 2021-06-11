@@ -1,4 +1,4 @@
-carros = "Uno", "Chevett", "Doblo", 25, 3.7, True
+carros = "Mille", "Chevett", "Doblo", 25, 3.7, True
 
 print(carros)
 
@@ -22,7 +22,7 @@ print(carros[-2])
 
 print(carros[-4:])
 
-carros = "Uno", "Chevett", "Doblo"
+carros = "Mille", "Chevett", "Doblo"
 
 print(sorted(carros))
 
