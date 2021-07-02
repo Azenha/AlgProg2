@@ -1,7 +1,10 @@
-from No import No
+class No:
+    def __init__(self, dado):
+        self.dado = dado
+        self.proximo = None
 
 
-class Fila:
+class Vagas:
     def __init__(self):
         self.inicio = None
         self.fim = None
@@ -20,7 +23,7 @@ class Fila:
     def imprimir(self):
         texto = ""
         if self.tamanho == 0:
-            texto = "Fila Vazia"
+            texto = "Não há fila de espera!"
         else:
             aux = self.inicio
             while (aux):
@@ -30,7 +33,7 @@ class Fila:
 
     def remover(self):
         if self.tamanho == 0:
-            print("Fila vazia")
+            print("Fila de espera vazia!")
         elif self.tamanho == 1:
             self.inicio = None
             self.fim = None

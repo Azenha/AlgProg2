@@ -3,8 +3,8 @@ class Apartamento:
         self.id = int()
         self.numero = str()
         self.torre = None
-        self.vaga = int()
-        self.proximo = None
+        # self.vaga = int()
+        # self.proximo = None
 
     def cadastrar(self,valor):
         self.id = int(input("Digite o ID do Apartamento: "))
