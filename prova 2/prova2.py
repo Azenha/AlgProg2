@@ -1,9 +1,29 @@
+"""
+Implementar uma pilha de objetos Livro.
+O objeto Livro também deve possuir os atributos id, título e autor.
+O atributo autor será utilizado para armazenar um objeto do tipo Autor.
+A classe Autor deve possuir o atributo fortemente privado id e o atributo público nome.
+O sistema deverá possuir métodos para inserir e para retirar livros da pilha.
+"""
+
+
 class Autor:
     __id = str()
 
     def __init__(self, id, nome):
         self.__id = id
         self.nome = str(nome)
+
+    def imprimir(self):
+        print("ID:", self.__id)
+        print("Nome:", self.nome)
+
+
+class Livro:
+    def __init__(self, id, titulo, autor):
+        self.id = id
+        self.titulo = titulo
+        self.autor = autor
 
 
 class No:
@@ -17,22 +37,8 @@ class Pilha:
         self.topo = None
         self.tamanho = 0
 
-    """ Exemplo da aula
-    def adicionar(self, valor):
-		no = No( valor )
-		if self.tamanho == 0 :
-			self.topo = no
-		else: 
-			no.proximo = self.topo
-			self.topo = no
-		self.tamanho +=1
-#		if self.tamanho > 0 :
-#			no.proximo = self.topo
-#		self.topo = no
-    """
-
-    def empilhar(self, elemento):
-        no = No(elemento)
+    def empilhar(self, titulo):
+        no = No(titulo)
         no.proximo = self.topo
         self.topo = no
         self.tamanho += 1
@@ -44,38 +50,13 @@ class Pilha:
             self.tamanho -= 1
             return no.dado
         # raise IndexError("A pilha está vazia")
-        print("A pilha está vazia")
-
-    """ Exemplo da aula
-    def remover(self):
-		if self.tamanho == 0:
-			print( "Pilha vazia!" )
-		elif self.tamanho == 1:
-			self.topo = None
-			self.tamanho = 0
-		else:
-			self.topo = self.topo.proximo
-			self.tamanho -= 1
-		self.imprimir()
-    """
+        print("Não há livros na pilha!")
 
     def espiar(self):
         if self.tamanho > 0:
             return self.topo.dado
         # raise IndexError("A pilha está vazia")
         print("A pilha está vazia")
-
-    """ Exemplo da aula
-   	def imprimir(self):
-		# if self.topo == None:
-		if self.tamanho == 0:
-			print( "Pilha vazia!" )
-		else:
-			aux = self.topo
-			while( aux ) :
-				print( aux.dado )
-				aux = aux.proximo
-    """
 
     def __len__(self):
         return self.tamanho
@@ -90,3 +71,44 @@ class Pilha:
 
     def __str__(self):
         return self.__repr__()
+
+
+autor1Id = input("Digite a ID do Autor 1: ")
+autor1Nome = input("Digite o Nome do Autor 1: ")
+autor1 = Autor(autor1Id, autor1Nome)
+autor1.imprimir()
+
+autor2 = Autor("2", "Azenha")
+autor3 = Autor("3", "Da")
+autor4 = Autor("4", "Silva")
+autor2.imprimir()
+autor3.imprimir()
+autor4.imprimir()
+
+livro1Id = input("Digite a ID do Autor 1: ")
+livro1Titulo = input("Digite o título do livro 1: ")
+livro1Autor = autor1.nome
+livro1 = Livro(livro1Id, livro1Titulo, livro1Autor)
+
+livro2 = Livro("2", "foo", autor2.nome)
+livro3 = Livro("3", "bar", autor3.nome)
+livro4 = Livro("4", "foobar", autor4.nome)
+
+print(f"{livro1.id} - {livro1.titulo} - {livro1.autor}")
+print(f"{livro2.id} - {livro2.titulo} - {livro2.autor}")
+print(f"{livro3.id} - {livro3.titulo} - {livro3.autor}")
+print(f"{livro4.id} - {livro4.titulo} - {livro4.autor}")
+
+pilha = Pilha()
+pilha.empilhar(livro1.titulo)
+pilha.empilhar(livro2.titulo)
+pilha.empilhar(livro3.titulo)
+print(pilha)
+pilha.remover()
+pilha.empilhar(livro4.titulo)
+print(pilha)
+pilha.remover()
+pilha.remover()
+pilha.remover()
+pilha.remover()
+pilha.remover()
