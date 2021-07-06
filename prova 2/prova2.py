@@ -52,26 +52,6 @@ class Pilha:
         # raise IndexError("A pilha está vazia")
         print("Não há livros na pilha!")
 
-    def espiar(self):
-        if self.tamanho > 0:
-            return self.topo.dado
-        # raise IndexError("A pilha está vazia")
-        print("A pilha está vazia")
-
-    def __len__(self):
-        return self.tamanho
-
-    def __repr__(self):
-        r = ""
-        ponteiro = self.topo
-        while ponteiro:
-            r = r + str(ponteiro.dado) + "\n"
-            ponteiro = ponteiro.proximo
-        return r
-
-    def __str__(self):
-        return self.__repr__()
-
 
 autor1Id = input("Digite a ID do Autor 1: ")
 autor1Nome = input("Digite o Nome do Autor 1: ")
